@@ -1,6 +1,11 @@
 # GestorFID
 Projeto de pesquisa 2025 - Trabalho de conclusão do curso técnico de eletrônica (FETLSVC - NH/RS)
-Por: Maximus R. Santos, Mateus R. Hörlle
+
+Autores:
+
+Maximus R. Santos
+Mateus R. Hörlle
+
 Python, SQL, Raspberry Pi, RFID, EPC Gen2
 
 # Contexto
