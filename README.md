@@ -3,8 +3,8 @@ Projeto de pesquisa 2025 - Trabalho de conclusão do curso técnico de eletrôni
 
 Autores:
 
-- Maximus Matheus Rosa Santos
 - Mateus Ramires Hörlle
+- Maximus Matheus Rosa Santos
 
 Python, SQL, Raspberry Pi, RFID, EPC Gen2
 
