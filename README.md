@@ -1,7 +1,7 @@
 # GestorFID
 
-Projeto de pesquisa 2025 — Trabalho de Conclusão do Curso Técnico em Eletrônica  
-(FETLSVC — Novo Hamburgo/RS)
+Projeto de pesquisa 2025 - Trabalho de Conclusão do Curso Técnico em Eletrônica  
+(FETLSVC - Novo Hamburgo/RS)
 
 Autores:
 
@@ -20,7 +20,7 @@ Tecnologias: Python, SQL, Raspberry Pi, RFID, EPC Gen2
 
 Hardware utilizado:
 
-- Raspberry Pi 3 (Debian 12 "Bookworm") — Servidor local
+- Raspberry Pi 3 (Debian 12 "Bookworm") - Servidor local
 - Leitor RFID R200 (módulo UHF serial)
 - Antena cerâmica UHF FA-305A 5.5 dBi
 - Tags RFID Wet Inlay NXP U8
