@@ -40,19 +40,6 @@ def atualizar_reabastecimento():
 
             preco_lote, preco_armazenamento, dias_entrega, validade_dias = dados
 
-
-
-
-
-
-
-
-
-
-
-
-
-
             # Vendas nos últimos X dias
             data_inicio = hoje - timedelta(days=dias_analise)
             cursor.execute("""
@@ -104,5 +91,6 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+
 
 
