@@ -13,6 +13,7 @@ config = {
     'host': 'localhost',
     'database': 'estoque'
 }
+
 try:
     conn = mariadb.connect(**config)
     cursor = conn.cursor()
@@ -96,7 +97,7 @@ def menu():
                 if code != d.OK:
                     return
 
-                if tag == "1":  # === CÓPIA DE CADASTRADO ===
+                if tag == "1":  #=== CÓPIA DE CADASTRADO ===
                     try:
                         cursor.execute("""
                             SELECT p.id, p.nome, p.validade, p.setor, p.distribuidor
@@ -118,7 +119,7 @@ def menu():
                         d.msgbox("Nenhum produto encontrado.")
                         continue
 
-                    # === FORMATA MENU COM COLUNAS FIXAS ===
+                    #=== FORMATA MENU COM COLUNAS FIXAS ===
                     choices_copy = []
                     for i, p in enumerate(produtos_existentes, start = 1):
                         _id, nome, validade, setor, distribuidor = p
@@ -228,13 +229,14 @@ title="Sucesso")
                 
                     #fim do loop de campos
 
-        #fim do try/while de leitura de EPC
-        break  #sair do while principal
+        #Fim do try/while de leitura de EPC
+        break  #Sair do while principal
 
 if __name__ == "__main__":
     menu()
     cursor.close()
     conn.close()
+
 
 
 
