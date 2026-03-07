@@ -227,10 +227,7 @@ def custos_cadastrar():
             continue
         if chave not in nomes_unicos:
             nomes_unicos[chave] = p
-
-    produtos_unicos = list(nomes_unicos.values())
-
-
+            
     produtos_unicos = list(nomes_unicos.values())
     if not produtos_unicos:
         d.msgbox("Todos os produtos já possuem custos cadastrados.", ok_label="Aceitar")
@@ -354,14 +351,14 @@ def modelo_reabastecimento():
         texto = "REABASTECIMENTO\n\n"
         for nome, vendidos, demanda, estoque, data_termino, data_pedido, Q_pedido, Q_final in produtos:
             texto += f"Produto: {nome}\n"
-            texto += f"  → Período analisado: {dias_analise} dias\n"
-            texto += f"  → Vendidos: {vendidos} un.\n"
-            texto += f"  → Demanda diária: {demanda:.2f} un/dia\n"
-            texto += f"  → Estoque atual: {estoque} un.\n"
-            texto += f"  → Lote ideal (Q*): {Q_final:.0f} un.\n"
-            texto += f"  → Pedido recomendado: {Q_pedido:.0f} un.\n"
-            texto += f"  → Data término estoque: {formatar_data(data_termino)}\n"
-            texto += f"  → Data do pedido: {formatar_data(data_pedido)}\n\n"
+            texto += f"  - Período analisado: {dias_analise} dias\n"
+            texto += f"  - Vendidos: {vendidos} un.\n"
+            texto += f"  - Demanda diária: {demanda:.2f} un/dia\n"
+            texto += f"  - Estoque atual: {estoque} un.\n"
+            texto += f"  - Lote ideal (Q*): {Q_final:.0f} un.\n"
+            texto += f"  - Pedido recomendado: {Q_pedido:.0f} un.\n"
+            texto += f"  - Data término estoque: {formatar_data(data_termino)}\n"
+            texto += f"  - Data do pedido: {formatar_data(data_pedido)}\n\n"
 
         d.scrollbox(texto.strip(), exit_label="OK", width=120, height=30)
         cursor.close()
@@ -801,6 +798,7 @@ if __name__ == "__main__":
     menu()
     cursor.close()
     conn.close()
+
 
 
 
