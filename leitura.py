@@ -11,6 +11,7 @@ config = {
     'host': 'localhost',
     'database': 'estoque'
 }
+
 try:
     conn = mariadb.connect(**config)
     cursor = conn.cursor()
@@ -72,6 +73,7 @@ def leitura_em_tempo_real(modo_escolhido, tempo, repetir=True, produtos_formatad
 
         if not leitor.is_open:
             leitor.open()
+            
         leitor.reset_input_buffer()
         leitor.write(bytes.fromhex("AA00070001020ADD")) #Região (USA)
         time.sleep(0.05)
@@ -103,6 +105,7 @@ def leitura_em_tempo_real(modo_escolhido, tempo, repetir=True, produtos_formatad
             d.set_background_title(titulo_tempo)
             timeout=timeout_para_proximo_minuto()
             txt = "Leitura contínua" if modo_escolhido == "contínua" else "Leitura única"
+            
             # for para repetidas leituras por ciclo
             for i in range(1, repetir_unica + 1):
                 leitor.reset_input_buffer()
@@ -112,9 +115,10 @@ def leitura_em_tempo_real(modo_escolhido, tempo, repetir=True, produtos_formatad
                 for epc, rssi in epcs_rssi: #Para as tags armazenadas durante o ciclo
                     if epc in epcs_lidos: #Se já tiver inclusa em epcs_lidos, continua
                         continue
+                    
                     #-------------------ACHOU TAG NOVA-------------------
                     cursor.execute("SELECT * FROM produtos WHERE epc = ?", (epc,)) 
-#Procura por produto com epc nova
+                    #Procura por produto com epc nova
                     prod = cursor.fetchone() #Guarda todos os registros do produto em prod
                     if prod: #Se encontrou o produto com epc registrada
                         produtos_lidos.append((rssi, *prod)) #Insere em produtos_lidos com registros armazenados
@@ -200,7 +204,7 @@ def menu():
         repetir=True #Repetir o menu de ordem
         titulo_tempo = tempo_formatado()
         d.set_background_title(titulo_tempo)
-        timeout=timeout_para_proximo_minuto()
+        timeout = timeout_para_proximo_minuto()
 
         code, modo = d.menu("Modos de leitura", title="Leitura em tempo real", choices=[
             ("1", "Única"),
@@ -229,6 +233,7 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+
 
 
 
