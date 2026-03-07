@@ -3,7 +3,7 @@ import mariadb, time
 from bancodedados import obter_produtos, em_prazo_de_vencimento
 
 led = LED(17)
-led_estado = None  # None, 'estatico', 'piscando'
+led_estado = None #None, 'estatico', 'piscando'
 
 while True:
     try:
@@ -44,5 +44,6 @@ while True:
         print(f"[ERRO LED] {e}")
 
     time.sleep(1)
+
 
 
