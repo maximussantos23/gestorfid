@@ -29,7 +29,16 @@ Hardware utilizado:
 
 O middleware é responsável por intermediar a comunicação entre o leitor RFID, o banco de dados e a interface de operação do sistema. Ele executa no Raspberry Pi e realiza o processamento das leituras das tags, gerenciamento de dados e controle das operações do sistema.
 
-O software foi desenvolvido em **Python 3**, utilizando comunicação **UART serial** para interação com o módulo RFID R200 e **MariaDB** para persistência das informações.
+O software foi desenvolvido em Python 3, utilizando comunicação UART serial para interação com o módulo RFID R200 e MariaDB para persistência das informações. Possui seis serviços principais de operação.
+
+### Serviços
+
+- Leitura em tempo real
+- Dar baixa
+- Nova gravação
+- Banco de dados
+- Gerar relatório
+- Configurações
 
 ### Principais funções
 
