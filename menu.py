@@ -22,9 +22,10 @@ def tempo_atual():
     return timeout
 
 def menu():
-
-    while True: #Cria um loop, para que seja possível atualizar a janela com return
-        timeout=tempo_atual() #Atribui o retorno da função a timeout
+    #Cria um loop, para que seja possível atualizar a janela com return
+    while True:
+        #Atribui o retorno da função a timeout
+        timeout = tempo_atual()
 
         #Menu simples em janela com opções
         #timeout é atribuída apenas uma vez, quando a janela é criada. Se o usuário mexer na tela, o timer é resetado para 60 segundos
@@ -61,5 +62,6 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+
 
 
