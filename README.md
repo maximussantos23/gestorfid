@@ -51,26 +51,19 @@ O software foi desenvolvido em Python 3, utilizando comunicação UART serial pa
 
 ## Requisitos do Sistema
 
-- Linux (Ubuntu recomendado) ou WSL (Windows Subsystem for Linux)
+- Linux (Ubuntu recomendado) ou WSL
 - Python 3.10+
-- Pacotes do sistema:
-  - dialog
-  - python3-venv
 
-## Instalação
-
-Atualize os pacotes:
+### Dependências do sistema
 sudo apt update
+sudo apt install dialog python3-venv python3-pip mariadb-server -y
 
-Instale dependências:
-sudo apt install dialog python3-venv -y
+### Instalação
 
-Crie e ative um ambiente virtual:
 python3 -m venv venv
 source venv/bin/activate
 
-Instale dependências:
-pip install pythondialog
+pip install -r requirements.txt
 
 ## Execução
 
