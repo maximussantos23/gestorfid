@@ -51,11 +51,26 @@ O software foi desenvolvido em Python 3, utilizando comunicação UART serial pa
 
 ## Requisitos do Sistema
 
-
+- Linux (Ubuntu recomendado) ou WSL (Windows Subsystem for Linux)
+- Python 3.10+
+- Pacotes do sistema:
+  - dialog
+  - python3-venv
 
 ## Instalação
 
+Atualize os pacotes:
+sudo apt update
 
+Instale dependências:
+sudo apt install dialog python3-venv -y
+
+Crie e ative um ambiente virtual:
+python3 -m venv venv
+source venv/bin/activate
+
+Instale dependências:
+pip install pythondialog
 
 ## Execução
 
