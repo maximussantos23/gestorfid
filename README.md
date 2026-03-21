@@ -51,7 +51,7 @@ O software foi desenvolvido em Python 3, utilizando comunicação UART serial pa
 
 ## Requisitos do Sistema
 
-- Linux (Ubuntu recomendado) ou WSL
+- Linux (Debian/Ubuntu) ou WSL
 - Python 3.10+
 
 ### Dependências do sistema
