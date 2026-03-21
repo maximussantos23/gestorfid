@@ -55,17 +55,22 @@ O software foi desenvolvido em Python 3, utilizando comunicação UART serial pa
 - Python 3.10+
 
 ### Dependências do sistema
-sudo apt update
-sudo apt install dialog python3-venv python3-pip mariadb-server -y
+- sudo apt update
+- sudo apt install dialog python3-venv python3-pip mariadb-server -y
 
 ### Instalação
 
-python3 -m venv venv
-source venv/bin/activate
+- python3 -m venv venv
+- source venv/bin/activate
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
-mysqldump -u root -p --databases estoque > schema.sql
+- mysqldump -u root -p --database estoque > schema.sql
 
 ## Execução
+
+Na primeira execução, caso no Debian Raspberry Pi, é necessário inserir manualmente a rede em Configurações, com um teclado diretamente no microcomputador.
+Somente após, será possível utilizar por conexão remota (SSH) em rede local.
+
+Senha padrão de inicialização por SSH: 123456
 
