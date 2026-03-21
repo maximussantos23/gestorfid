@@ -65,5 +65,7 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
+mysqldump -u root -p --databases estoque > schema.sql
+
 ## Execução
 
