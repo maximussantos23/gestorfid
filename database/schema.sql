@@ -114,6 +114,9 @@ CREATE TABLE `vencimento` (
   `senha` varchar(128) DEFAULT NULL,
   `dias_analise` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO vencimento (dias, senha, dias_analise)
+SELECT 30, '123456', 7
+WHERE NOT EXISTS (SELECT 1 FROM vencimento);
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
