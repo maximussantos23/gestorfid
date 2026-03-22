@@ -96,7 +96,7 @@ FLUSH PRIVILEGES;
 
 ## Execução
 
-Na primeira execução, caso no Raspberry Pi, é necessário inserir manualmente a rede em Configurações, com um teclado diretamente no microcomputador.
+Na primeira execução, caso no Raspberry Pi, é necessário inserir manualmente a rede em Configurações
 Somente após, será possível utilizar por conexão remota (SSH) em rede local.
 
 Senha padrão de inicialização por SSH: 123456
