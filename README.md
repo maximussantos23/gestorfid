@@ -64,6 +64,7 @@ O software foi desenvolvido em Python 3, utilizando comunicação UART serial pa
 - source venv/bin/activate
 
 - sudo apt install libmariadb-dev
+- sudo apt install mariadb-server
 
 - pip install -r requirements.txt
 
