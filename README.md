@@ -49,10 +49,18 @@ O software foi desenvolvido em Python 3, utilizando comunicação UART serial pa
 - Geração de relatórios de estoque
 - Monitoramento de validade e escassez de itens
 
-## Requisitos do Sistema
+## Ambientes suportados
 
-- Linux (Debian/Ubuntu) ou WSL
-- Python 3.10+
+### Produção (recomendado)
+- Raspberry Pi (Debian-based)
+- Integração completa com leitor RFID
+
+### Desenvolvimento
+- Ubuntu (nativo)
+- WSL (Windows Subsystem for Linux)
+
+Observação:
+Em Ubuntu/WSL, funcionalidades dependentes de hardware (como leitura RFID) podem não funcionar ou exigir adaptação.
 
 ### Dependências do sistema
 - sudo apt update
@@ -75,7 +83,7 @@ O software foi desenvolvido em Python 3, utilizando comunicação UART serial pa
 ##### 1. Iniciar o serviço
 - sudo service mariadb start
 
-##### 2. Criar banco e usuário
+##### 2. Criar banco e usuário (Exemplo)
 - sudo mysql -e "
 CREATE DATABASE estoque;
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'senha123';
