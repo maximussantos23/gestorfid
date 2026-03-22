@@ -73,10 +73,10 @@ O software foi desenvolvido em Python 3, utilizando comunicação UART serial pa
 #### Setup do banco de dados (MariaDB)
 
 ##### 1. Iniciar o serviço
-sudo service mariadb start
+- sudo service mariadb start
 
 ##### 2. Criar banco e usuário
-sudo mysql -e "
+- sudo mysql -e "
 CREATE DATABASE estoque;
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'senha123';
 GRANT ALL PRIVILEGES ON estoque.* TO 'usuario'@'localhost';
@@ -84,7 +84,7 @@ FLUSH PRIVILEGES;
 "
 
 ##### 3. Importar schema
-mysql -u usuario -p estoque < database/schema.sql
+- mysql -u usuario -p estoque < database/schema.sql
 
 ## Execução
 
