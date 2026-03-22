@@ -63,6 +63,8 @@ O software foi desenvolvido em Python 3, utilizando comunicação UART serial pa
 - python3 -m venv venv
 - source venv/bin/activate
 
+- sudo apt install libmariadb-dev
+
 - pip install -r requirements.txt
 
 - mysqldump -u root -p --database estoque > schema.sql
