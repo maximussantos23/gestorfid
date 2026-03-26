@@ -24,7 +24,10 @@ d = Dialog(dialog="dialog")
 def ler_tags_do_r200(serial_port):
     
     """
-    Função responsável pela filtragem do protocolo recebido pela porta serial do Raspberry Pi via UART (24 bytes), separando potência (em dBm) de EPC (12 bytes). É tratado como parâmetro o direcionamento para a porta serial utilizada (string) e criada uma lista para armazenamento das tags interpretadas. Através do de um tempo delimitado, é feito várias leituras, ignorando tags já lidas armazenadas em epc e rssi, e salvando apenas tags únicas. Retorna a lista de tuplas (tags)
+    Função responsável pela filtragem do protocolo recebido pela porta serial do Raspberry Pi via UART (24 bytes), separando potência (em dBm) de
+    EPC (12 bytes). É tratado como parâmetro o direcionamento para a porta serial utilizada (string) e criada uma lista para armazenamento das
+    tags interpretadas. Através do de um tempo delimitado, é feito várias leituras, ignorando tags já lidas armazenadas em epc e rssi, e salvando
+    apenas tags únicas. Retorna a lista de tuplas (tags)
     """ 
 
     tags = []
@@ -32,19 +35,16 @@ def ler_tags_do_r200(serial_port):
 
     #Tempo escolhido para ciclo
     while time.time() - inicio < 0.05:
-        if serial_port.in_waiting == 0: #Se não encontrou nada, 0.1 s e tenta denovo
+        if serial_port.in_waiting == 0: #Se não encontrou nada, 0.05 s e tenta denovo
             continue
 
         try:
             data = serial_port.read_until(b'\xDD') #Lê até o final do comando recebido
             #Tag inválida
-            print(data.hex().upper())
-
-             
             if len(data) != 24:
                 continue
 
-            raw_rssi = data[5]
+            raw_rssi = data[5] #Captura rssi bruto no quinto byte
             rssi = raw_rssi - 230 if raw_rssi > 128 else -raw_rssi #Adquirir rssi
             epc_bytes = data[8:20] #Localização da EPC
 
@@ -60,7 +60,8 @@ def ler_tags_do_r200(serial_port):
 def leitura_em_tempo_real(modo_escolhido, tempo, repetir=True, produtos_formatados=None, repetir_unica=5):
 
     """
-    Função responsável pela criação do direcionamento da porta serial ttyS0 (ou serial0), envio de protocolos de funcionamento do leitor, definindo região, potência e frequência. 
+    Função responsável pela criação do direcionamento da porta serial ttyS0 (ou serial0), envio de protocolos de funcionamento do leitor,
+    definindo região, potência e frequência. Foi necessário usar a porta serial do bluetooth, pois estava com erro de baudrate.
     """
 
     try:
