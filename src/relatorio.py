@@ -35,24 +35,6 @@ tabelas = {
     "4": "custos_produto"
 }
 
-def encontrar_pendrive():
-    # Lista dispositivos de bloco (lsblk -J = JSON)
-    resultado = subprocess.check_output(["lsblk", "-J", "-o", "NAME,MOUNTPOINT"]).decode()
-    if "/media/" in resultado or "/mnt/" in resultado:
-        linhas = resultado.splitlines()
-        for linha in linhas:
-            if "/media/" in linha or "/mnt/" in linha:
-                return linha.strip().split('"')[-2]  # pega o caminho de montagem
-    return None
-
-def copiar_para_pendrive(arquivo_origem):
-    destino = encontrar_pendrive()
-    if not destino:
-        return None
-    
-    shutil.copy(arquivo_origem, destino)
-    return 1
-
 # ----------------- CUSTOS DE LOTE -----------------
 def custos_exibir():
     cursor.execute("""
@@ -736,14 +718,6 @@ def configurar_relatorio():
                                 writer = csv.writer(f)
                                 writer.writerow(headers_fmt)
                                 writer.writerows(dados_fmt)
-
-                            resultado = copiar_para_pendrive("/home/maximus/relatorio.csv")
-
-                            if resultado:
-                                d.msgbox("Relatório CSV gerado e transferido com sucesso: relatorio.csv", ok_label="OK")
-                            else:
-                                d.msgbox("Relatório CSV gerado com sucesso: relatorio.csv", ok_label="OK")
-                            return
 
 # ----------------- MENU PRINCIPAL -----------------
 def menu():
