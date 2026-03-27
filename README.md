@@ -101,3 +101,7 @@ Somente após, será possível utilizar por conexão remota (SSH) em rede local.
 
 Senha padrão de inicialização por SSH: 123456
 
+## Relatório
+
+- https://docs.google.com/document/d/1XaPjWHtfMITkK5YDtYTN7xeungY4HFr7ofbHfELuuNM/edit?usp=sharing
+
