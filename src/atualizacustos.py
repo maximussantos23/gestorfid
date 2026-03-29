@@ -1,6 +1,6 @@
 import mariadb
 import time
-import math
+import math 
 from datetime import datetime, timedelta
 
 config = {
