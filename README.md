@@ -103,5 +103,5 @@ Senha padrão de inicialização por SSH: 123456
 
 ## Relatório
 
-- https://docs.google.com/document/d/1XaPjWHtfMITkK5YDtYTN7xeungY4HFr7ofbHfELuuNM/edit?usp=sharing
+- https://drive.google.com/file/d/1-IZknTQn00VVSXsh28ewaRPsg9Ip0LRO/view?usp=drive_link
 
