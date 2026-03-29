@@ -22,7 +22,7 @@ def atualizar_reabastecimento():
         produtos_custos = cursor.fetchall()
 
         for prod_id, nome in produtos_custos:
-            # Pega os dias para analise
+            #Pega os dias para analise
             cursor.execute("""
                 SELECT dias_analise FROM vencimento
             """)
@@ -39,21 +39,7 @@ def atualizar_reabastecimento():
                 continue
 
             preco_lote, preco_armazenamento, dias_entrega, validade_dias = dados
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            # Vendas nos últimos X dias
+            #Vendas nos últimos X dias
             data_inicio = hoje - timedelta(days=dias_analise)
             cursor.execute("""
                 SELECT COUNT(*) FROM produtos_vendidos
@@ -63,7 +49,7 @@ def atualizar_reabastecimento():
 
             demanda = round(vendidos / dias_analise, 2) if dias_analise else 0
 
-            # Estoque atual
+            #Estoque atual
             cursor.execute("SELECT COUNT(*) FROM produtos WHERE nome=?", (nome,))
             estoque = cursor.fetchone()[0]
 
