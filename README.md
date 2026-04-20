@@ -96,10 +96,9 @@ FLUSH PRIVILEGES;
 
 ## Execução
 
-Na primeira execução, caso no Raspberry Pi, é necessário inserir manualmente a rede em Configurações.
-Somente após, será possível utilizar por conexão remota (SSH) em rede local.
+Os arquivos 'menu.py', 'ledcontinuo.py' e 'atualizacustos.py' devem funcionar em systemd, inicializando esses serviços junto com o sistema, paralelamente.
 
-Senha padrão de inicialização por SSH: 123456
+
 
 ## Relatório
 
